@@ -28,7 +28,7 @@ app.patch("/api/v1/products/:id", (req, res)=>{
         if(quantity === 0){
             res.status(404).json({
                 "status": "success",
-                "message": `Product ${id}, Out of stock!`,
+                "message": `${item.name}, Out of stock!`,
             })
         }
         else{
@@ -40,7 +40,7 @@ app.patch("/api/v1/products/:id", (req, res)=>{
 
                     res.status(200).json({
                         "status": "success",
-                        "message": "Thank you for purchasing Product "+id,
+                        "message": "Thank you for purchasing "+item.name,
                         "product": item
                     });
 
